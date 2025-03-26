@@ -222,10 +222,22 @@ Reverse primer  1    CTTGCTTATGGAACCGGTCG  20
 Template        402  ....................  383
 ```
 
-Make sure the primer pair has no off target effects. In this case, it appears as though there are unintended templates that target other transcripts. However, if you look at the location of the primers
+Make sure the primer pair has no off target effects. In this case, it appears as though there are unintended templates that target other transcripts. However, if you look at the location of the primers here https://github.com/p4rkerw/qpcr_design/blob/main/www.ncbi.nlm.nih.gov_tools_primer-blast_primertool.cgi_ctg_time%3D1743016255%26job_key%3DUliMoYAVjb2qg4iGheastP_9vYbS7qab0w%26CheckStatus%3DCheck.png
+you can see that they all target the exon1-exon2 junction of Dclk1. This is the desired region because exon 1 is not present in the Dclk1 short isoforms. Importantly, this primer set will only quantify mature spliced Dclk1 long isoforms for transcript variants 12, 4, 11, 1, 9, and 5.
 
+Here are the primers for our target
+```
+>NM_001357475.1 Mus musculus doublecortin-like kinase 1 (Dclk1), transcript variant 12, mRNA
 
-5. Double check primers with gene sequence on NBCI primer blast
+product length = 134
+Forward primer  1    ATCAGTGCACTAGCGGTCG  19
+Template        269  ...................  287
+
+Reverse primer  1    CTTGCTTATGGAACCGGTCG  20
+Template        402  ....................  383
+```
+
+5. Double check primers with refseq accession on NBCI primer blast
 
 
 
