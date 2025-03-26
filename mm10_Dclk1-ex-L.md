@@ -124,6 +124,8 @@ splicing after transcription that affects a small region of the transcript, whic
 
 
 ```
+
+```
 Primer pair 1
 Sequence (5'->3')	Template strand	Length	Start	Stop	Tm	GC%	Self complementarity	Self 3' complementarity
 Forward primer	CTAGAGGAGGGAGGACCCTG	Plus	20	63	82	59.81	65.00	4.00	2.00
@@ -331,7 +333,7 @@ Forward primer  1     CTAGAGGAGGGAGGACCCTG  20
 Template        1673  GC.....G.T.G........  1654
 ```
 
-```
+
 
 Make sure the primer pair has no off target effects. In this case, it appears as though there are unintended templates that target other transcripts. However, if you look at the location of the primers here https://github.com/p4rkerw/qpcr_design/blob/main/www.ncbi.nlm.nih.gov_tools_primer-blast_primertool.cgi_ctg_time%3D1743016255%26job_key%3DUliMoYAVjb2qg4iGheastP_9vYbS7qab0w%26CheckStatus%3DCheck.png
 you can see that they all target the exon1-exon2 junction of Dclk1. This is the desired region because exon 1 is not present in the Dclk1 short isoforms. Importantly, this primer set will only quantify mature spliced and unspliced Dclk1 long isoforms for transcript variants 5, 12, 4, 11, 1, 9, 
