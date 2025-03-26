@@ -342,12 +342,12 @@ Here are the primers for our target
 ```
 >NM_001357475.1 Mus musculus doublecortin-like kinase 1 (Dclk1), transcript variant 12, mRNA
 
-product length = 138
-Forward primer  1   CCATTGCAACCAGAAGCCTG  20
-Template        42  ....................  61
+product length = 129
+Forward primer  1   CTAGAGGAGGGAGGACCCTG  20
+Template        63  ....................  82
 
-Reverse primer  1    TCTTGTGTCTCACTCGCTCAC  21
-Template        179  .....................  159
+Reverse primer  1    CGCGCAAGCTTTTCTTGTGT  20
+Template        191  ....................  172
 ```
 
 5. Double check primers with refseq accession on NBCI primer blast
