@@ -1,8 +1,8 @@
-primer design for double cortin like kinase 1 (Dclk1) for mouse mm10 reference that targets the long isoform (
+primer design for double cortin like kinase 1 (Dclk1) for mouse mm10 reference that targets the long isoform 
 
-1. Navigate to Dclk1 gene for mm10 genome on ucsc genome browser. Note how there are multiple Dclk1 transcripts.
+1. Navigate to Dclk1 gene for mm10 genome on ucsc genome browser. Note how there are multiple Dclk1 transcripts. Some are long and some are short.
 
-2. Click on the Dclk1 long isoform transcript to retrieve the ensembl transcript number and refseq accession. The long isoform is often the first transcript in the column.
+2. Click on the first Dclk1 long isoform transcript to retrieve the ensembl transcript number and refseq accession. The long isoform is often the first transcript in the column (but is not necessarily variant #1).
 ```
 Description: Mus musculus doublecortin-like kinase 1 (Dclk1), transcript variant 5, mRNA. (from RefSeq NM_001195538)
 Gencode Transcript: ENSMUST00000196745.4
