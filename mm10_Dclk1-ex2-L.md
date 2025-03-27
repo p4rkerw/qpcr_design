@@ -416,7 +416,7 @@ Template        558  ....................  577
 Reverse primer  1    ATCCGAGAGAGTTCGGGTCA  20
 Template        699  ....................  680
 ```
-Use ucsc blat to make sure they align where you expect them to align (ie exon 2). 
+Use ucsc blat or in-silico pcr tool to make sure they align where you expect them to align (ie exon 2). 
 
 Results for forward and reverse primer
 ```
