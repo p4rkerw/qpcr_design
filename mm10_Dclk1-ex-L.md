@@ -394,12 +394,14 @@ Template        5089  .....TG.-...........  5071
 
 Make sure that the intended and predicted off targets are what you want. You can search for them using ucsc genome browser. Dont worry about XM predicted transcripts or transcripts with mismatches.
 
+```
 >NM_001357475.1 Mus musculus doublecortin-like kinase 1 (Dclk1), transcript variant 12, mRNA
 >NM_001195538.2 Mus musculus doublecortin-like kinase 1 (Dclk1), transcript variant 5, mRNA
 >NM_001357466.1 Mus musculus doublecortin-like kinase 1 (Dclk1), transcript variant 9, mRNA
 >NM_019978.4 Mus musculus doublecortin-like kinase 1 (Dclk1), transcript variant 1, mRNA
 >NM_001357469.1 Mus musculus doublecortin-like kinase 1 (Dclk1), transcript variant 11, mRNA
 >NM_001111053.2 Mus musculus doublecortin-like kinase 1 (Dclk1), transcript variant 4, mRNA
+```
 
 All of these are Dclk1 long isoform transcripts, which is what we want.
 
