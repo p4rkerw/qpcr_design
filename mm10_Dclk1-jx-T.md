@@ -340,7 +340,41 @@ Reverse primer  1    TCCTCAGACTCTTCTTCCCCA  21
 Template        548  .....................  528
 ```
 
-5. Double check primers with refseq accession on NBCI primer blast
+5. Double check primers with refseq accession on NBCI primer blast. Or use the ucsc in-silico pcr tool
+
+```
+The sequences and coordinates shown below are from GENCODE Genes, not from the genome assembly. The links lead to the Genome Browser at the position of the entire target sequence.
+>ENSMUST00000070418.8__Dclk1:415+518 104bp CAGAGGATCTCTCAGCATGGC TCCTCAGACTCTTCTTCCCCA
+CAGAGGATCTCTCAGCATGGCggctcctcgacttcactttcatccactaa
+agtttgcagctcaatggatgagaatgatggcccTGGGGAAGAAGAGTCTG
+AGGA
+
+>ENSMUST00000198412.4__Dclk1:274+377 104bp CAGAGGATCTCTCAGCATGGC TCCTCAGACTCTTCTTCCCCA
+CAGAGGATCTCTCAGCATGGCggctcctcgacttcactttcatccactaa
+agtttgcagctcaatggatgagaatgatggcccTGGGGAAGAAGAGTCTG
+AGGA
+
+>ENSMUST00000199169.4__Dclk1:257+360 104bp CAGAGGATCTCTCAGCATGGC TCCTCAGACTCTTCTTCCCCA
+CAGAGGATCTCTCAGCATGGCggctcctcgacttcactttcatccactaa
+agtttgcagctcaatggatgagaatgatggcccTGGGGAAGAAGAGTCTG
+AGGA
+
+>ENSMUST00000198757.1__Dclk1:1093+1196 104bp CAGAGGATCTCTCAGCATGGC TCCTCAGACTCTTCTTCCCCA
+ttccaGATCTCTCAGCATGGCggctcctcgacttcactttcatccactaa
+agtttgcagctcaatggatgagaatgatggcccTGGGGAAGAAGAGTCTG
+AGGA
+
+>ENSMUST00000200352.1__Dclk1:201+304 104bp CAGAGGATCTCTCAGCATGGC TCCTCAGACTCTTCTTCCCCA
+CAGAGGATCTCTCAGCATGGCggctcctcgacttcactttcatccactaa
+agtttgcagctcaatggatgagaatgatggcccTGGGGAAGAAGAGTCTG
+AGGA
+
+>ENSMUST00000196745.4__Dclk1:1438+1541 104bp CAGAGGATCTCTCAGCATGGC TCCTCAGACTCTTCTTCCCCA
+CAGAGGATCTCTCAGCATGGCggctcctcgacttcactttcatccactaa
+agtttgcagctcaatggatgagaatgatggcccTGGGGAAGAAGAGTCTG
+AGGA
+
+```
 
 
 
