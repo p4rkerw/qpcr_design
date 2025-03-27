@@ -33,7 +33,7 @@ Sequence retrieval options:
 CDS Exons
 One FASTA record per region (exon, intron, etc)
 
-Sequnece Formatting Options:
+Sequence Formatting Options:
 Mask repeats to N
 
 
