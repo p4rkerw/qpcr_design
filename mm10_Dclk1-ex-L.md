@@ -13,6 +13,8 @@ RefSeq Accession: NM_001357475.1
 ```
 In the image below note how there are multiple transcripts in the gencode tracks
 
+https://github.com/p4rkerw/qpcr_design/blob/main/genome.ucsc.edu_cgi-bin_hgTracks_db%3Dmm10%26lastVirtModeType%3Ddefault%26lastVirtModeExtraState%3D%26virtModeType%3Ddefault%26virtMode%3D0%26nonVirtPosition%3D%26position%3Dchr3%253A55242364%252D55248273%26hgsid%3D2497334001_sAOcecptudFNpCatouA6iwzKR2jw%20(2).png
+
 
 
 3. Retrieve the DNA sequence of the gene using the Table Browser tool
