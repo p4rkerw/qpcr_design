@@ -1,5 +1,5 @@
 
-primer design for double cortin like kinase 1 (Dclk1) for mouse mm10 reference that targets the long isoform exon 1 (NOT junction spanning)
+primer design for double cortin like kinase 1 (Dclk1) for mouse mm10 reference that targets the long isoform exon 2 (NOT junction spanning)
 
 1. Navigate to Dclk1 gene for mm10 genome on ucsc genome browser. Note how there are multiple Dclk1 transcripts. Some are long and some are short.
 
@@ -11,14 +11,13 @@ Gencode Gene: ENSMUSG00000027797.15
 
 RefSeq Accession: NM_001357475.1
 ```
-In the image below note how there are multiple transcripts in the gencode tracks. The top transcript appears to undergo splicing in the first exon, however, the second exon is more conserved. To capture all Dclk1 long isoform transcripts,
-we will make sure that the primers are designed for exon #2.
+In the image below note how there are multiple transcripts in the gencode tracks. The top transcript appears to undergo splicing in the first exon, however, the downstream exons are more conserved. To capture all Dclk1 long isoform transcripts, we will make sure that the primers are designed for exon #2.
 
 ![Screenshot](https://github.com/p4rkerw/qpcr_design/blob/main/genome.ucsc.edu_cgi-bin_hgTracks_db%3Dmm10%26lastVirtModeType%3Ddefault%26lastVirtModeExtraState%3D%26virtModeType%3Ddefault%26virtMode%3D0%26nonVirtPosition%3D%26position%3Dchr3%253A55242364%252D55248273%26hgsid%3D2497334001_sAOcecptudFNpCatouA6iwzKR2jw%20(2).png)
 
 
 
-3. Retrieve the DNA sequence of the gene using the Table Browser tool
+3. Retrieve the whole gene DNA sequence of the gene using the Table Browser tool
 Tools > Table Browser
 
 ```
@@ -90,7 +89,7 @@ CCCCCAATTCGCCCTTTTAA
 
 ```
 
-This is the sequence for exon 1 only:
+This is the sequence for exon 2 only. Note how it starts with an ATG start codon because exon 1 is non-coding. The ensembl transcript identifier also has a _0 at the end.  
 ```
 >mm10_knownGene_ENSMUST00000196745.4_0 range=chr3:55247151-55247526 5'pad=0 3'pad=0 strand=+ repeatMasking=N
 ATGTCGTTCGGCAGAGATATGGAGTTGGAGCATTTTGATGAGCGGGACAA
@@ -118,11 +117,8 @@ Note how there is a high score and 100% match for the region of interest and a p
 
 
 4. Navigate to NCBI primer blast
-Paste the refseq accession NM_001357475.1 into the PCR template box
+Paste the exon 2 sequence into the PCR template box. Unlike ensembl transcripts, Exons do not have unique refseq accession numbers .
 Decrease the PCR product maximum size from 1000 to 150
-
-Exon/intron selection
-> Exon junction span: Primer may not span an exon-exon junction
 
 Primer pair specificity checking parameters
 Database: Refseq mRNA
@@ -130,238 +126,307 @@ Organism: Mus musculus (taxid:10090)
 
 Get Primers
 
-```
-Primer blast will alert you that "Your PCR template is highly similar to the following sequences....", including NM_001195538.2 Mus musculus doublecortin-like kinase 1 (Dclk1), transcript variant 5, mRNA
-You can check the box next to this accession and click submit. This transcript is highly similar to NM_001357475.1 as shows by the 99.96% identity match. The Dclk1 long isoform undergoes alternative
-splicing after transcription that affects a small region of the transcript, which is why some of the isoforms are highly similar.
-
+Primer blast will alert you that "Your PCR template is highly similar to the following sequences...." The Dclk1 long isoform undergoes alternative
+splicing after transcription that affects a small region of the transcript, which is why some of the isoforms are highly similar. You can check all of the "NM" boxes and proceed. You do not need to check the "XM" predicted
+transcript boxes.
 
 ```
+Accession	Title	Identity	Alignment length	Seq. start	Seq. stop
+>NM_001111053.2	Mus musculus doublecortin-like kinase 1 (Dclk1), transcript variant 4, mRNA	100%	376	409	784
+>NM_001357469.1	Mus musculus doublecortin-like kinase 1 (Dclk1), transcript variant 11, mRNA	100%	376	409	784
+XM_036162883.1	PREDICTED: Mus musculus doublecortin-like kinase 1 (Dclk1), transcript variant X9, mRNA	100%	376	470	845
+XM_017319447.3	PREDICTED: Mus musculus doublecortin-like kinase 1 (Dclk1), transcript variant X1, mRNA	100%	376	470	845
+XM_006500983.5	PREDICTED: Mus musculus doublecortin-like kinase 1 (Dclk1), transcript variant X8, mRNA	100%	376	470	845
+XM_006500982.3	PREDICTED: Mus musculus doublecortin-like kinase 1 (Dclk1), transcript variant X7, mRNA	100%	376	470	845
+>NM_019978.4	Mus musculus doublecortin-like kinase 1 (Dclk1), transcript variant 1, mRNA	100%	376	409	784
+>NM_001357466.1	Mus musculus doublecortin-like kinase 1 (Dclk1), transcript variant 9, mRNA	100%	376	409	784
+>NM_001195538.2	Mus musculus doublecortin-like kinase 1 (Dclk1), transcript variant 5, mRNA	100%	376	409	784
+>NM_001357475.1	Mus musculus doublecortin-like kinase 1 (Dclk1), transcript variant 12, mRNA	100%	376	409	784
+```
+
+5. Inspect output of primer search
 
 ```
 Primer pair 1
 Sequence (5'->3')	Template strand	Length	Start	Stop	Tm	GC%	Self complementarity	Self 3' complementarity
-Forward primer	CTAGAGGAGGGAGGACCCTG	Plus	20	63	82	59.81	65.00	4.00	2.00
-Reverse primer	CGCGCAAGCTTTTCTTGTGT	Minus	20	191	172	60.59	50.00	6.00	1.00
-Product length	129
-Exon junction	None for forward primer, None for reverse primer
+Forward primer	CAGCTCCGAGAAGAAAGCCA	Plus	20	150	169	60.04	55.00	5.00	0.00
+Reverse primer	ATCCGAGAGAGTTCGGGTCA	Minus	20	291	272	60.03	55.00	4.00	1.00
+Product length	142
 Products on intended targets
+>NM_001111053.2 Mus musculus doublecortin-like kinase 1 (Dclk1), transcript variant 4, mRNA
+
+product length = 142
+Forward primer  1    CAGCTCCGAGAAGAAAGCCA  20
+Template        558  ....................  577
+
+Reverse primer  1    ATCCGAGAGAGTTCGGGTCA  20
+Template        699  ....................  680
+
+>NM_001357469.1 Mus musculus doublecortin-like kinase 1 (Dclk1), transcript variant 11, mRNA
+
+product length = 142
+Forward primer  1    CAGCTCCGAGAAGAAAGCCA  20
+Template        558  ....................  577
+
+Reverse primer  1    ATCCGAGAGAGTTCGGGTCA  20
+Template        699  ....................  680
+
+>NM_019978.4 Mus musculus doublecortin-like kinase 1 (Dclk1), transcript variant 1, mRNA
+
+product length = 142
+Forward primer  1    CAGCTCCGAGAAGAAAGCCA  20
+Template        558  ....................  577
+
+Reverse primer  1    ATCCGAGAGAGTTCGGGTCA  20
+Template        699  ....................  680
+
+>NM_001357466.1 Mus musculus doublecortin-like kinase 1 (Dclk1), transcript variant 9, mRNA
+
+product length = 142
+Forward primer  1    CAGCTCCGAGAAGAAAGCCA  20
+Template        558  ....................  577
+
+Reverse primer  1    ATCCGAGAGAGTTCGGGTCA  20
+Template        699  ....................  680
+
 >NM_001195538.2 Mus musculus doublecortin-like kinase 1 (Dclk1), transcript variant 5, mRNA
 
-product length = 129
-Forward primer  1   CTAGAGGAGGGAGGACCCTG  20
-Template        63  ....................  82
+product length = 142
+Forward primer  1    CAGCTCCGAGAAGAAAGCCA  20
+Template        558  ....................  577
 
-Reverse primer  1    CGCGCAAGCTTTTCTTGTGT  20
-Template        191  ....................  172
+Reverse primer  1    ATCCGAGAGAGTTCGGGTCA  20
+Template        699  ....................  680
 
 >NM_001357475.1 Mus musculus doublecortin-like kinase 1 (Dclk1), transcript variant 12, mRNA
 
-product length = 129
-Forward primer  1   CTAGAGGAGGGAGGACCCTG  20
-Template        63  ....................  82
+product length = 142
+Forward primer  1    CAGCTCCGAGAAGAAAGCCA  20
+Template        558  ....................  577
 
-Reverse primer  1    CGCGCAAGCTTTTCTTGTGT  20
-Template        191  ....................  172
+Reverse primer  1    ATCCGAGAGAGTTCGGGTCA  20
+Template        699  ....................  680
 
 Products on potentially unintended templates
-> NM_001111053.2 Mus musculus doublecortin-like kinase 1 (Dclk1), transcript variant 4, mRNA
-
-product length = 129
-Forward primer  1   CTAGAGGAGGGAGGACCCTG  20
-Template        63  ....................  82
-
-Reverse primer  1    CGCGCAAGCTTTTCTTGTGT  20
-Template        191  ....................  172
-
-> NM_001357469.1 Mus musculus doublecortin-like kinase 1 (Dclk1), transcript variant 11, mRNA
-
-product length = 129
-Forward primer  1   CTAGAGGAGGGAGGACCCTG  20
-Template        63  ....................  82
-
-Reverse primer  1    CGCGCAAGCTTTTCTTGTGT  20
-Template        191  ....................  172
-
 > XM_036162883.1 PREDICTED: Mus musculus doublecortin-like kinase 1 (Dclk1), transcript variant X9, mRNA
 
-product length = 129
-Forward primer  1    CTAGAGGAGGGAGGACCCTG  20
-Template        124  ....................  143
+product length = 142
+Forward primer  1    CAGCTCCGAGAAGAAAGCCA  20
+Template        619  ....................  638
 
-Reverse primer  1    CGCGCAAGCTTTTCTTGTGT  20
-Template        252  ....................  233
+Reverse primer  1    ATCCGAGAGAGTTCGGGTCA  20
+Template        760  ....................  741
 
 > XM_017319447.3 PREDICTED: Mus musculus doublecortin-like kinase 1 (Dclk1), transcript variant X1, mRNA
 
-product length = 129
-Forward primer  1    CTAGAGGAGGGAGGACCCTG  20
-Template        124  ....................  143
+product length = 142
+Forward primer  1    CAGCTCCGAGAAGAAAGCCA  20
+Template        619  ....................  638
 
-Reverse primer  1    CGCGCAAGCTTTTCTTGTGT  20
-Template        252  ....................  233
+Reverse primer  1    ATCCGAGAGAGTTCGGGTCA  20
+Template        760  ....................  741
 
 > XM_006500983.5 PREDICTED: Mus musculus doublecortin-like kinase 1 (Dclk1), transcript variant X8, mRNA
 
-product length = 129
-Forward primer  1    CTAGAGGAGGGAGGACCCTG  20
-Template        124  ....................  143
+product length = 142
+Forward primer  1    CAGCTCCGAGAAGAAAGCCA  20
+Template        619  ....................  638
 
-Reverse primer  1    CGCGCAAGCTTTTCTTGTGT  20
-Template        252  ....................  233
+Reverse primer  1    ATCCGAGAGAGTTCGGGTCA  20
+Template        760  ....................  741
 
 > XM_006500982.3 PREDICTED: Mus musculus doublecortin-like kinase 1 (Dclk1), transcript variant X7, mRNA
 
-product length = 129
-Forward primer  1    CTAGAGGAGGGAGGACCCTG  20
-Template        124  ....................  143
+product length = 142
+Forward primer  1    CAGCTCCGAGAAGAAAGCCA  20
+Template        619  ....................  638
 
-Reverse primer  1    CGCGCAAGCTTTTCTTGTGT  20
-Template        252  ....................  233
+Reverse primer  1    ATCCGAGAGAGTTCGGGTCA  20
+Template        760  ....................  741
 
-> NM_019978.4 Mus musculus doublecortin-like kinase 1 (Dclk1), transcript variant 1, mRNA
+> XM_036154667.1 PREDICTED: Mus musculus microtubule-associated protein 4 (Map4), transcript variant X30, mRNA
 
-product length = 129
-Forward primer  1   CTAGAGGAGGGAGGACCCTG  20
-Template        63  ....................  82
+product length = 2954
+Forward primer  1     CAGCTCCGAGAAGAAAGCCA  20
+Template        3764  A...C.A..A........A.  3783
 
-Reverse primer  1    CGCGCAAGCTTTTCTTGTGT  20
-Template        191  ....................  172
+Forward primer  1     CAGCTCCGAGAAGAAAGCCA  20
+Template        6717  .....TG.-...........  6699
 
-> NM_001357466.1 Mus musculus doublecortin-like kinase 1 (Dclk1), transcript variant 9, mRNA
+> NM_001205330.2 Mus musculus microtubule-associated protein 4 (Map4), transcript variant 1, mRNA
 
-product length = 129
-Forward primer  1   CTAGAGGAGGGAGGACCCTG  20
-Template        63  ....................  82
+product length = 3158
+Forward primer  1     CAGCTCCGAGAAGAAAGCCA  20
+Template        2139  A...C.A..A........A.  2158
 
-Reverse primer  1    CGCGCAAGCTTTTCTTGTGT  20
-Template        191  ....................  172
+Forward primer  1     CAGCTCCGAGAAGAAAGCCA  20
+Template        5296  .....TG.-...........  5278
 
-> XM_036157065.1 PREDICTED: Mus musculus musashi RNA-binding protein 2 (Msi2), transcript variant X17, mRNA
+> XM_030244102.1 PREDICTED: Mus musculus microtubule-associated protein 4 (Map4), transcript variant X9, mRNA
 
-product length = 3943
-Forward primer  1    CTAGAGGAGGGAGGACCCTG  20
-Template        597  .A....C.......CT....  616
+product length = 2939
+Forward primer  1     CAGCTCCGAGAAGAAAGCCA  20
+Template        4117  A...C.A..A........A.  4136
 
-Forward primer  1     CTAGAGGAGGGAGGACCCTG  20
-Template        4539  ....G.AG.A.......T..  4520
+Forward primer  1     CAGCTCCGAGAAGAAAGCCA  20
+Template        7055  .....TG.-...........  7037
 
-> XM_036157064.1 PREDICTED: Mus musculus musashi RNA-binding protein 2 (Msi2), transcript variant X15, mRNA
+> NM_001311163.2 Mus musculus microtubule-associated protein 4 (Map4), transcript variant 5, mRNA
 
-product length = 3967
-Forward primer  1    CTAGAGGAGGGAGGACCCTG  20
-Template        597  .A....C.......CT....  616
+product length = 2938
+Forward primer  1     CAGCTCCGAGAAGAAAGCCA  20
+Template        1552  A...C.A..A........A.  1571
 
-Forward primer  1     CTAGAGGAGGGAGGACCCTG  20
-Template        4563  ....G.AG.A.......T..  4544
+Forward primer  1     CAGCTCCGAGAAGAAAGCCA  20
+Template        4489  .....TG.-...........  4471
 
-> NM_153178.5 Mus musculus argonaute RISC catalytic subunit 2 (Ago2), mRNA
+> NM_001420119.1 Mus musculus microtubule-associated protein 4 (Map4), transcript variant 12, mRNA
 
-product length = 355
-Forward primer  1     CTAGAGGAGGGAGGACCCTG  20
-Template        5760  ..T.G.........GA....  5741
+product length = 3052
+Forward primer  1     CAGCTCCGAGAAGAAAGCCA  20
+Template        2139  A...C.A..A........A.  2158
 
-Reverse primer  1     CGCGCAAGCTTTTCTTGTGT  20
-Template        5406  G.A..C.......TG.....  5425
+Forward primer  1     CAGCTCCGAGAAGAAAGCCA  20
+Template        5190  .....TG.-...........  5172
 
-> NM_025880.4 Mus musculus RIKEN cDNA 2410002F23 gene (2410002F23Rik), mRNA
+> NM_001428296.1 Mus musculus microtubule-associated protein 4 (Map4), transcript variant 24, mRNA
 
-product length = 1371
-Forward primer  1    CTAGAGGAGGGAGGACCCTG  20
-Template        150  GCT....C.......T....  169
+product length = 2732
+Forward primer  1     CAGCTCCGAGAAGAAAGCCA  20
+Template        2139  A...C.A..A........A.  2158
 
-Forward primer  1     CTAGAGGAGGGAGGACCCTG  20
-Template        1520  GC.....G.T.G........  1501
+Forward primer  1     CAGCTCCGAGAAGAAAGCCA  20
+Template        4870  .....TG.-...........  4852
 
-> XM_006541090.4 PREDICTED: Mus musculus RIKEN cDNA 2410002F23 gene (2410002F23Rik), transcript variant X1, mRNA
+> XM_036154669.1 PREDICTED: Mus musculus microtubule-associated protein 4 (Map4), transcript variant X42, mRNA
 
-product length = 1371
-Forward primer  1    CTAGAGGAGGGAGGACCCTG  20
-Template        320  GCT....C.......T....  339
+product length = 2732
+Forward primer  1     CAGCTCCGAGAAGAAAGCCA  20
+Template        3764  A...C.A..A........A.  3783
 
-Forward primer  1     CTAGAGGAGGGAGGACCCTG  20
-Template        1690  GC.....G.T.G........  1671
+Forward primer  1     CAGCTCCGAGAAGAAAGCCA  20
+Template        6495  .....TG.-...........  6477
 
-> XM_006541095.3 PREDICTED: Mus musculus RIKEN cDNA 2410002F23 gene (2410002F23Rik), transcript variant X4, mRNA
+> NM_001428285.1 Mus musculus microtubule-associated protein 4 (Map4), transcript variant 14, mRNA
 
-product length = 1371
-Forward primer  1    CTAGAGGAGGGAGGACCCTG  20
-Template        309  GCT....C.......T....  328
+product length = 2938
+Forward primer  1     CAGCTCCGAGAAGAAAGCCA  20
+Template        5319  A...C.A..A........A.  5338
 
-Forward primer  1     CTAGAGGAGGGAGGACCCTG  20
-Template        1679  GC.....G.T.G........  1660
+Forward primer  1     CAGCTCCGAGAAGAAAGCCA  20
+Template        8256  .....TG.-...........  8238
 
-> XM_006541093.4 PREDICTED: Mus musculus RIKEN cDNA 2410002F23 gene (2410002F23Rik), transcript variant X3, mRNA
+> XM_017313181.2 PREDICTED: Mus musculus microtubule-associated protein 4 (Map4), transcript variant X36, mRNA
 
-product length = 1371
-Forward primer  1    CTAGAGGAGGGAGGACCCTG  20
-Template        311  GCT....C.......T....  330
+product length = 2825
+Forward primer  1     CAGCTCCGAGAAGAAAGCCA  20
+Template        3764  A...C.A..A........A.  3783
 
-Forward primer  1     CTAGAGGAGGGAGGACCCTG  20
-Template        1681  GC.....G.T.G........  1662
+Forward primer  1     CAGCTCCGAGAAGAAAGCCA  20
+Template        6588  .....TG.-...........  6570
 
-> XM_036153367.1 PREDICTED: Mus musculus RIKEN cDNA 2410002F23 gene (2410002F23Rik), transcript variant X8, mRNA
+> NM_001419642.1 Mus musculus microtubule-associated protein 4 (Map4), transcript variant 7, mRNA
 
-product length = 1371
-Forward primer  1    CTAGAGGAGGGAGGACCCTG  20
-Template        453  GCT....C.......T....  472
+product length = 3161
+Forward primer  1     CAGCTCCGAGAAGAAAGCCA  20
+Template        2139  A...C.A..A........A.  2158
 
-Forward primer  1     CTAGAGGAGGGAGGACCCTG  20
-Template        1823  GC.....G.T.G........  1804
+Forward primer  1     CAGCTCCGAGAAGAAAGCCA  20
+Template        5299  .....TG.-...........  5281
 
-> XM_006541097.4 PREDICTED: Mus musculus RIKEN cDNA 2410002F23 gene (2410002F23Rik), transcript variant X10, mRNA
+> NM_001428289.1 Mus musculus microtubule-associated protein 4 (Map4), transcript variant 18, mRNA
 
-product length = 1371
-Forward primer  1    CTAGAGGAGGGAGGACCCTG  20
-Template        146  GCT....C.......T....  165
+product length = 2748
+Forward primer  1     CAGCTCCGAGAAGAAAGCCA  20
+Template        2139  A...C.A..A........A.  2158
 
-Forward primer  1     CTAGAGGAGGGAGGACCCTG  20
-Template        1516  GC.....G.T.G........  1497
+Forward primer  1     CAGCTCCGAGAAGAAAGCCA  20
+Template        4886  .....TG.-...........  4868
 
-> XM_006541091.2 PREDICTED: Mus musculus RIKEN cDNA 2410002F23 gene (2410002F23Rik), transcript variant X2, mRNA
+> XM_006511962.5 PREDICTED: Mus musculus microtubule-associated protein 4 (Map4), transcript variant X31, mRNA
 
-product length = 1371
-Forward primer  1    CTAGAGGAGGGAGGACCCTG  20
-Template        465  GCT....C.......T....  484
+product length = 2951
+Forward primer  1     CAGCTCCGAGAAGAAAGCCA  20
+Template        3764  A...C.A..A........A.  3783
 
-Forward primer  1     CTAGAGGAGGGAGGACCCTG  20
-Template        1835  GC.....G.T.G........  1816
+Forward primer  1     CAGCTCCGAGAAGAAAGCCA  20
+Template        6714  .....TG.-...........  6696
 
-> XM_030242907.1 PREDICTED: Mus musculus RIKEN cDNA 2410002F23 gene (2410002F23Rik), transcript variant X9, mRNA
+> NM_001420118.1 Mus musculus microtubule-associated protein 4 (Map4), transcript variant 11, mRNA
 
-product length = 1371
-Forward primer  1    CTAGAGGAGGGAGGACCCTG  20
-Template        270  GCT....C.......T....  289
+product length = 2830
+Forward primer  1     CAGCTCCGAGAAGAAAGCCA  20
+Template        2139  A...C.A..A........A.  2158
 
-Forward primer  1     CTAGAGGAGGGAGGACCCTG  20
-Template        1640  GC.....G.T.G........  1621
+Forward primer  1     CAGCTCCGAGAAGAAAGCCA  20
+Template        4968  .....TG.-...........  4950
 
-> XM_030242906.2 PREDICTED: Mus musculus RIKEN cDNA 2410002F23 gene (2410002F23Rik), transcript variant X7, mRNA
+> NM_001420116.1 Mus musculus microtubule-associated protein 4 (Map4), transcript variant 9, mRNA
 
-product length = 1371
-Forward primer  1    CTAGAGGAGGGAGGACCCTG  20
-Template        303  GCT....C.......T....  322
+product length = 2845
+Forward primer  1     CAGCTCCGAGAAGAAAGCCA  20
+Template        2139  A...C.A..A........A.  2158
 
-Forward primer  1     CTAGAGGAGGGAGGACCCTG  20
-Template        1673  GC.....G.T.G........  1654
+Forward primer  1     CAGCTCCGAGAAGAAAGCCA  20
+Template        4983  .....TG.-...........  4965
+
+> XM_006511960.4 PREDICTED: Mus musculus microtubule-associated protein 4 (Map4), transcript variant X21, mRNA
+
+product length = 3161
+Forward primer  1     CAGCTCCGAGAAGAAAGCCA  20
+Template        3764  A...C.A..A........A.  3783
+
+Forward primer  1     CAGCTCCGAGAAGAAAGCCA  20
+Template        6924  .....TG.-...........  6906
+
+> NM_001420115.1 Mus musculus microtubule-associated protein 4 (Map4), transcript variant 8, mRNA
+
+product length = 2951
+Forward primer  1     CAGCTCCGAGAAGAAAGCCA  20
+Template        2139  A...C.A..A........A.  2158
+
+Forward primer  1     CAGCTCCGAGAAGAAAGCCA  20
+Template        5089  .....TG.-...........  5071
+
+
 ```
 
-Make sure the primer pair has no off target effects. In this case, it appears as though there are unintended templates that target other transcripts. However, if you look at the location of the primers here https://github.com/p4rkerw/qpcr_design/blob/main/www.ncbi.nlm.nih.gov_tools_primer-blast_primertool.cgi_ctg_time%3D1743016255%26job_key%3DUliMoYAVjb2qg4iGheastP_9vYbS7qab0w%26CheckStatus%3DCheck.png
-you can see that they all target the exon1-exon2 junction of Dclk1. This is the desired region because exon 1 is not present in the Dclk1 short isoforms. Importantly, this primer set will only quantify mature spliced and unspliced Dclk1 long isoforms for transcript variants 5, 12, 4, 11, 1, 9, 
+Make sure that the intended and predicted off targets are what you want. You can search for them using ucsc genome browser. Dont worry about XM predicted transcripts or transcripts with mismatches.
 
-Here are the primers for our target
-```
 >NM_001357475.1 Mus musculus doublecortin-like kinase 1 (Dclk1), transcript variant 12, mRNA
+>NM_001195538.2 Mus musculus doublecortin-like kinase 1 (Dclk1), transcript variant 5, mRNA
+>NM_001357466.1 Mus musculus doublecortin-like kinase 1 (Dclk1), transcript variant 9, mRNA
+>NM_019978.4 Mus musculus doublecortin-like kinase 1 (Dclk1), transcript variant 1, mRNA
+>NM_001357469.1 Mus musculus doublecortin-like kinase 1 (Dclk1), transcript variant 11, mRNA
+>NM_001111053.2 Mus musculus doublecortin-like kinase 1 (Dclk1), transcript variant 4, mRNA
 
-product length = 129
-Forward primer  1   CTAGAGGAGGGAGGACCCTG  20
-Template        63  ....................  82
+All of these are Dclk1 long isoform transcripts, which is what we want.
 
-Reverse primer  1    CGCGCAAGCTTTTCTTGTGT  20
-Template        191  ....................  172
+6. Here are our selected primers
 ```
+>NM_001111053.2 Mus musculus doublecortin-like kinase 1 (Dclk1), transcript variant 4, mRNA
 
-5. Double check primers with refseq accession on NBCI primer blast
+product length = 142
+Forward primer  1    CAGCTCCGAGAAGAAAGCCA  20
+Template        558  ....................  577
+
+Reverse primer  1    ATCCGAGAGAGTTCGGGTCA  20
+Template        699  ....................  680
+```
+Use ucsc blat to make sure they align where you expect them to align (ie exon 2). 
+
+Results for forward and reverse primer
+```
+browser new tab details YourSeq    20     1    20    20   100.0%  chr3   +    55247300  55247319     20
+
+browser new tab details YourSeq    20     1    20    20   100.0%  chr3   -    55247422  55247441     20
+
+
+
+
+
+
+
 
 
 
