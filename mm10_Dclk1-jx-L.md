@@ -237,7 +237,7 @@ Reverse primer  1    CTTGCTTATGGAACCGGTCG  20
 Template        402  ....................  383
 ```
 
-5. Double check primers with refseq accession on NBCI primer blast. You cant use blat to search for these primers because they span a junction. In other words, these sequences are only present in cDNA (spliced mature mRNA).
+5. Double check primers with refseq accession on NBCI primer blast. You cant use blat to search for these primers because they span a junction. In other words, these sequences are only present in cDNA (spliced mature mRNA). An alternative is the ucsc in-silico primer tool. 
 
 
 
