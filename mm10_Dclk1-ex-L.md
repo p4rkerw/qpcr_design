@@ -11,7 +11,8 @@ Gencode Gene: ENSMUSG00000027797.15
 
 RefSeq Accession: NM_001357475.1
 ```
-In the image below note how there are multiple transcripts in the gencode tracks
+In the image below note how there are multiple transcripts in the gencode tracks. The top transcript appears to undergo splicing in the first exon, however, the second exon is more conserved. To capture all Dclk1 long isoform transcripts,
+we will make sure that the primers are designed for exon #2.
 
 ![Screenshot](https://github.com/p4rkerw/qpcr_design/blob/main/genome.ucsc.edu_cgi-bin_hgTracks_db%3Dmm10%26lastVirtModeType%3Ddefault%26lastVirtModeExtraState%3D%26virtModeType%3Ddefault%26virtMode%3D0%26nonVirtPosition%3D%26position%3Dchr3%253A55242364%252D55248273%26hgsid%3D2497334001_sAOcecptudFNpCatouA6iwzKR2jw%20(2).png)
 
