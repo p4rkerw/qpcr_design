@@ -239,5 +239,23 @@ Template        402  ....................  383
 
 5. Double check primers with refseq accession on NBCI primer blast. You cant use blat to search for these primers because they span a junction. In other words, these sequences are only present in cDNA (spliced mature mRNA). An alternative is the ucsc in-silico primer tool. 
 
+```
+	The sequences and coordinates shown below are from GENCODE Genes, not from the genome assembly. The links lead to the Genome Browser at the position of the entire target sequence.
+>ENSMUST00000167204.7__Dclk1:107+240 134bp ATCAGTGCACTAGCGGTCG CTTGCTTATGGAACCGGTCG
+ATCAGTGCACTAGCGGTCGcagcttccagacgctcgtgctccgcagcccc
+agccgcgcccagcccggcgaggacagctccagcagccggccacagacaac
+ccagcctccacccgCGACCGGTTCCATAAGCAAG
 
+>ENSMUST00000054237.13__Dclk1:107+240 134bp ATCAGTGCACTAGCGGTCG CTTGCTTATGGAACCGGTCG
+ATCAGTGCACTAGCGGTCGcagcttccagacgctcgtgctccgcagcccc
+agccgcgcccagcccggcgaggacagctccagcagccggccacagacaac
+ccagcctccacccgCGACCGGTTCCATAAGCAAG
+
+>ENSMUST00000196745.4__Dclk1:269+402 134bp ATCAGTGCACTAGCGGTCG CTTGCTTATGGAACCGGTCG
+ATCAGTGCACTAGCGGTCGcagcttccagacgctcgtgctccgcagcccc
+agccgcgcccagcccggcgaggacagctccagcagccggccacagacaac
+ccagcctccacccgCGACCGGTTCCATAAGCAAG
+
+
+```
 
