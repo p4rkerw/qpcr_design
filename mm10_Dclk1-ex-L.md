@@ -116,7 +116,8 @@ browser new tab details YourSeq    28   139   175   376    89.2%  chr13  +    74
 Note how there is a high score and 100% match for the region of interest and a partial match for regions on other chromosomes
 
 
-4. Navigate to NCBI primer blast
+5. Navigate to NCBI primer blast
+
 Paste the exon 2 sequence into the PCR template box. Unlike ensembl transcripts, Exons do not have unique refseq accession numbers .
 Decrease the PCR product maximum size from 1000 to 150
 
@@ -144,7 +145,7 @@ XM_006500982.3	PREDICTED: Mus musculus doublecortin-like kinase 1 (Dclk1), trans
 >NM_001357475.1	Mus musculus doublecortin-like kinase 1 (Dclk1), transcript variant 12, mRNA	100%	376	409	784
 ```
 
-5. Inspect output of primer search
+6. Inspect output of primer search
 
 ```
 Primer pair 1
@@ -402,7 +403,7 @@ Make sure that the intended and predicted off targets are what you want. You can
 
 All of these are Dclk1 long isoform transcripts, which is what we want.
 
-6. Here are our selected primers
+7. Here are our selected primers
 ```
 >NM_001111053.2 Mus musculus doublecortin-like kinase 1 (Dclk1), transcript variant 4, mRNA
 
