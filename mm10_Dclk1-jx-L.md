@@ -1,4 +1,4 @@
-primer design for double cortin like kinase 1 (Dclk1) for mouse mm10 reference that targets the long isoform 
+primer design for double cortin like kinase 1 (Dclk1) for mouse mm10 reference that targets a long isoform exon-exon junction.
 
 1. Navigate to Dclk1 gene for mm10 genome on ucsc genome browser. Note how there are multiple Dclk1 transcripts. Some are long and some are short.
 
@@ -237,7 +237,7 @@ Reverse primer  1    CTTGCTTATGGAACCGGTCG  20
 Template        402  ....................  383
 ```
 
-5. Double check primers with refseq accession on NBCI primer blast
+5. Double check primers with refseq accession on NBCI primer blast. You cant use blat to search for these primers because they span a junction. In other words, these sequences are only present in cDNA (spliced mature mRNA).
 
 
 
