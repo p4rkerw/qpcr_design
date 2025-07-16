@@ -792,6 +792,7 @@ Template        2525  ....................  2506
 
 ```
 
+
 We can confirm this design using ucsc in silico pcr and the GENCODE gene set 
 
 ```
@@ -823,4 +824,94 @@ gcaggttttccgacgaAGACGCAACCAGGATGTGAG
 ACTGCAGCAGGAGTTTCTGTaatagcaaccaccgctcttgataaggagag
 gcaggttttccgacgaAGACGCAACCAGGATGTGAG
 
+```
+
+```
+# OPTION 2 with minimum amplicon size set to 100bp
+Primer pair 1
+Sequence (5'->3')	Template strand	Length	Start	Stop	Tm	GC%	Self complementarity	Self 3' complementarity
+Forward primer	ACTGCAGCAGGAGTTTCTGT	Plus	20	28	47	59.53	50.00	7.00	2.00
+Reverse primer	TTCAATTCCGGTGGAGCTGG	Minus	20	152	133	60.32	55.00	4.00	1.00
+Product length	125
+Products on intended targets
+>XM_006500981.5 PREDICTED: Mus musculus doublecortin-like kinase 1 (Dclk1), transcript variant X2, mRNA
+
+product length = 125
+Forward primer  1     ACTGCAGCAGGAGTTTCTGT  20
+Template        1579  ....................  1598
+
+Reverse primer  1     TTCAATTCCGGTGGAGCTGG  20
+Template        1703  ....................  1684
+
+>NM_019978.4 Mus musculus doublecortin-like kinase 1 (Dclk1), transcript variant 1, mRNA
+
+product length = 125
+Forward primer  1     ACTGCAGCAGGAGTTTCTGT  20
+Template        2488  ....................  2507
+
+Reverse primer  1     TTCAATTCCGGTGGAGCTGG  20
+Template        2612  ....................  2593
+
+>NM_001111051.2 Mus musculus doublecortin-like kinase 1 (Dclk1), transcript variant 2, mRNA
+
+product length = 125
+Forward primer  1     ACTGCAGCAGGAGTTTCTGT  20
+Template        1447  ....................  1466
+
+Reverse primer  1     TTCAATTCCGGTGGAGCTGG  20
+Template        1571  ....................  1552
+
+>XM_036162881.1 PREDICTED: Mus musculus doublecortin-like kinase 1 (Dclk1), transcript variant X3, mRNA
+
+product length = 125
+Forward primer  1     ACTGCAGCAGGAGTTTCTGT  20
+Template        1069  ....................  1088
+
+Reverse primer  1     TTCAATTCCGGTGGAGCTGG  20
+Template        1193  ....................  1174
+
+>NM_001195539.2 Mus musculus doublecortin-like kinase 1 (Dclk1), transcript variant 6, mRNA
+
+product length = 125
+Forward primer  1     ACTGCAGCAGGAGTTTCTGT  20
+Template        1495  ....................  1514
+
+Reverse primer  1     TTCAATTCCGGTGGAGCTGG  20
+Template        1619  ....................  1600
+
+>XM_036162882.1 PREDICTED: Mus musculus doublecortin-like kinase 1 (Dclk1), transcript variant X5, mRNA
+
+product length = 125
+Forward primer  1     ACTGCAGCAGGAGTTTCTGT  20
+Template        1315  ....................  1334
+
+Reverse primer  1     TTCAATTCCGGTGGAGCTGG  20
+Template        1439  ....................  1420
+
+>NM_001195538.2 Mus musculus doublecortin-like kinase 1 (Dclk1), transcript variant 5, mRNA
+
+product length = 125
+Forward primer  1     ACTGCAGCAGGAGTTTCTGT  20
+Template        2440  ....................  2459
+
+Reverse primer  1     TTCAATTCCGGTGGAGCTGG  20
+Template        2564  ....................  2545
+
+>NM_001357475.1 Mus musculus doublecortin-like kinase 1 (Dclk1), transcript variant 12, mRNA
+
+product length = 125
+Forward primer  1     ACTGCAGCAGGAGTTTCTGT  20
+Template        2437  ....................  2456
+
+Reverse primer  1     TTCAATTCCGGTGGAGCTGG  20
+Template        2561  ....................  2542
+
+>XM_030252411.2 PREDICTED: Mus musculus doublecortin-like kinase 1 (Dclk1), transcript variant X4, mRNA
+
+product length = 125
+Forward primer  1     ACTGCAGCAGGAGTTTCTGT  20
+Template        1528  ....................  1547
+
+Reverse primer  1     TTCAATTCCGGTGGAGCTGG  20
+Template        1652  ....................  1633
 ```
