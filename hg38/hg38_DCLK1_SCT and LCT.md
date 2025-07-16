@@ -914,7 +914,7 @@ tacaaataaaccaaataccattca
 ** sequence is the portion that is unique to the short c-terminus isoforms. It should identify transcript variants 1 and 2 as highly similar to the PCR template. Note that the lower case "g" is not conserved in mice. 
 
 ```
-ATAGCA**CTGGACCACGGGTTTACCATCAAGAGATCAGGGTCTTTGGACTACTACCAgCAACCAGGAATGTATTGGATAAGACCACCGCTCTTGATAAG**GAGAGGCAGGTTTTCCGACGAA
+ATAGCA**CTGGACCACGGGTTTACCATCAAGAGATCAGGGTCTTTGGACTACTACCA"g"CAACCAGGAATGTATTGGATAAG**ACCACCGCTCTTGATAAGGAGAGGCAGGTTTTCCGACGAA
 
 ```
 
@@ -945,7 +945,8 @@ Template        2460  ....................  2441
 
 ```
 
-We can confirm this primer design using ucsc in silico pcr and the gencode gene set for transcript variants 1 (DCLK1-L: NM_004734.5 / ENST00000255448.8) and 2 (DCLK1-S: NM_001195415.2 / ENST00000615680.5)
+We can confirm this primer design using ucsc in silico pcr and the gencode gene set for transcript variants 1 (DCLK1-L: NM_004734.5 / ENST00000255448.8) and 2 (DCLK1-S: NM_001195415.2 / ENST00000615680.5). Note how these primers also do not make use of the non-conserved
+nucleotide and are likely compatible in other species.  
 
 ```
 >ENST00000615680.5__DCLK1:1278+1390 113bp TGGACCACGGGTTTACCATC TTCGTCGGAAAACCTGCCTC
