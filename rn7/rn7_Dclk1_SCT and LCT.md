@@ -689,52 +689,80 @@ tttatgtaaaacatgttcttaaactaataaagtaatatctcttggtgtac
 aaa
 ```
 
-3. We will now create qPCR primers using PrimerBlast that are specific for short c-terminus containing isoforms (both DCLK1-L and DCLK1-S) using the following mRNA sequence where the ** sequence is the portion that is unique to the short c-terminus isoforms. It should identify transcript variants 3,9,10,11,13 as highly similar to the PCR template. Note that the lower case "a" is not conserved in humans
+3. We will now create qPCR primers using PrimerBlast that are specific for short c-terminus containing isoforms (both DCLK1-L and DCLK1-S) using the following mRNA sequence where the ** sequence is the portion that is unique to the short c-terminus isoforms. Note that the lower case "a" is not conserved in humans (but is the same in mice).
 
 ```
 ATAGCA**CTGGACCACGGGTTTACCATCAAGAGATCAGGGTCTTTGGACTACTACCA"a"CAACCAGGAATGTATTGGATAAG**ACCACCGCTCTTGATAAGGAGAGGCAGGTTTTCCGACGAA
-
 ```
 
 ```
-Primer pair 1
+# Note that primer pair 3 is identical to mm39 primer pair 1
+Primer pair 3
 Sequence (5'->3')	Template strand	Length	Start	Stop	Tm	GC%	Self complementarity	Self 3' complementarity
 Forward primer	GCACTGGACCACGGGTTTAC	Plus	20	4	23	61.23	60.00	5.00	2.00
 Reverse primer	CGTCGGAAAACCTGCCTCTC	Minus	20	118	99	61.01	60.00	3.00	1.00
 Product length	115
 Products on intended targets
->NM_001357469.1 Mus musculus doublecortin-like kinase 1 (Dclk1), transcript variant 11, mRNA
+>XM_039103256.2 PREDICTED: Rattus norvegicus doublecortin-like kinase 1 (Dclk1), transcript variant X12, mRNA
 
 product length = 115
 Forward primer  1     GCACTGGACCACGGGTTTAC  20
-Template        2512  ....................  2531
+Template        1471  ....................  1490
 
 Reverse primer  1     CGTCGGAAAACCTGCCTCTC  20
-Template        2626  ....................  2607
+Template        1585  ....................  1566
 
->NM_001357468.1 Mus musculus doublecortin-like kinase 1 (Dclk1), transcript variant 10, mRNA
+>XM_039103249.2 PREDICTED: Rattus norvegicus doublecortin-like kinase 1 (Dclk1), transcript variant X2, mRNA
 
 product length = 115
 Forward primer  1     GCACTGGACCACGGGTTTAC  20
-Template        1519  ....................  1538
+Template        2557  ....................  2576
 
 Reverse primer  1     CGTCGGAAAACCTGCCTCTC  20
-Template        1633  ....................  1614
+Template        2671  ....................  2652
 
->XM_030252412.2 PREDICTED: Mus musculus doublecortin-like kinase 1 (Dclk1), transcript variant X6, mRNA
+>XM_017591139.3 PREDICTED: Rattus norvegicus doublecortin-like kinase 1 (Dclk1), transcript variant X5, mRNA
 
 product length = 115
 Forward primer  1     GCACTGGACCACGGGTTTAC  20
-Template        1556  ....................  1575
+Template        2509  ....................  2528
 
 Reverse primer  1     CGTCGGAAAACCTGCCTCTC  20
-Template        1670  ....................  1651
+Template        2623  ....................  2604
+
+>XM_008761005.4 PREDICTED: Rattus norvegicus doublecortin-like kinase 1 (Dclk1), transcript variant X11, mRNA
+
+product length = 115
+Forward primer  1     GCACTGGACCACGGGTTTAC  20
+Template        1474  ....................  1493
+
+Reverse primer  1     CGTCGGAAAACCTGCCTCTC  20
+Template        1588  ....................  1569
+
+>XM_039103253.2 PREDICTED: Rattus norvegicus doublecortin-like kinase 1 (Dclk1), transcript variant X6, mRNA
+
+product length = 115
+Forward primer  1     GCACTGGACCACGGGTTTAC  20
+Template        2506  ....................  2525
+
+Reverse primer  1     CGTCGGAAAACCTGCCTCTC  20
+Template        2620  ....................  2601
+
+>XM_063282639.1 PREDICTED: Rattus norvegicus doublecortin-like kinase 1 (Dclk1), transcript variant X9, mRNA
+
+product length = 115
+Forward primer  1     GCACTGGACCACGGGTTTAC  20
+Template        1522  ....................  1541
+
+Reverse primer  1     CGTCGGAAAACCTGCCTCTC  20
+Template        1636  ....................  1617
 
 ```
 
-We can confirm this primer design using ucsc in silico pcr
+We cannot confirm this primer design using ucsc in silico pcr because there is no gencode annotation for rn7 (but the primer set is identical for mouse)
 
 ```
+# NOTE: validations are for mm39
 >ENSMUST00000070418.8__Dclk1:1441+1555 115bp GCACTGGACCACGGGTTTAC CGTCGGAAAACCTGCCTCTC
 GCACTGGACCACGGGTTTACcatcaagagatcagggtctttggactacta
 ccaacaaccaggaatgtattggataagaccaccgctcttgataagGAGAG
@@ -747,78 +775,75 @@ GCAGGTTTTCCGACG
 ```
 
 
-4. We will also create qPCR primers using PrimerBlast that are specific for the long c-terminus containing isoforms (both DCLK1-L and DCLK1-S) using the following mRNA sequence where the || indicates the splice junction. Note how the first primer pair F primer crosses the splice junction.
+4. We will also create qPCR primers using PrimerBlast that are specific for the long c-terminus containing isoforms (both DCLK1-L and DCLK1-S) using the following mRNA sequence where the || indicates the splice junction. Note how the primer pair crosses the splice junction.
 
 ```
-TTCAACACAGGCCCCAAGCCGAGCAGCACTGCAGCAGGAGTTTCTGTAATAGCA||ACCACCGCTCTTGATAAGGAGAGGCAGGTTTTCCGACGAAGACGCAACCAGGATGTGAGGAGCCGGTACAAGGCGCAGCCAGCTCCACCGGAATTGAACT
-
+TTCAACACGGGCCCCAAGCCGAGCAGCACGGCAGCTGGAGTTTCTGTAATAGCA||ACCACCGCTCTTGATAAGGAGAGGCAGGTTTTCCGACGAAGACGCAACCAGGATGTGAGGGGCCGGTACAAGGCACAGCCAGCTCCACCAGAACTCAACT
 ```
 
 ```
 Primer pair 1
 Sequence (5'->3')	Template strand	Length	Start	Stop	Tm	GC%	Self complementarity	Self 3' complementarity
-Forward primer	ACTGCAGCAGGAGTTTCTGT	Plus	20	28	47	59.53	50.00	7.00	2.00
+Forward primer	CGGCAGCTGGAGTTTCTGTA	Plus	20	29	48	60.04	55.00	6.00	2.00
 Reverse primer	CTCACATCCTGGTTGCGTCT	Minus	20	113	94	60.04	55.00	5.00	0.00
-Product length	86
+Product length	85
 Products on intended targets
->XM_030252411.2 PREDICTED: Mus musculus doublecortin-like kinase 1 (Dclk1), transcript variant X4, mRNA
+>XM_017591138.3 PREDICTED: Rattus norvegicus doublecortin-like kinase 1 (Dclk1), transcript variant X8, mRNA
 
-product length = 86
-Forward primer  1     ACTGCAGCAGGAGTTTCTGT  20
-Template        1528  ....................  1547
-
-Reverse primer  1     CTCACATCCTGGTTGCGTCT  20
-Template        1613  ....................  1594
-
->NM_001357475.1 Mus musculus doublecortin-like kinase 1 (Dclk1), transcript variant 12, mRNA
-
-product length = 86
-Forward primer  1     ACTGCAGCAGGAGTTTCTGT  20
-Template        2437  ....................  2456
+product length = 85
+Forward primer  1     CGGCAGCTGGAGTTTCTGTA  20
+Template        1499  ....................  1518
 
 Reverse primer  1     CTCACATCCTGGTTGCGTCT  20
-Template        2522  ....................  2503
+Template        1583  ....................  1564
 
->NM_001195538.2 Mus musculus doublecortin-like kinase 1 (Dclk1), transcript variant 5, mRNA
+>XM_039103252.2 PREDICTED: Rattus norvegicus doublecortin-like kinase 1 (Dclk1), transcript variant X4, mRNA
 
-product length = 86
-Forward primer  1     ACTGCAGCAGGAGTTTCTGT  20
-Template        2440  ....................  2459
+product length = 85
+Forward primer  1     CGGCAGCTGGAGTTTCTGTA  20
+Template        2483  ....................  2502
 
 Reverse primer  1     CTCACATCCTGGTTGCGTCT  20
-Template        2525  ....................  2506
+Template        2567  ....................  2548
+
+>NM_053343.3 Rattus norvegicus doublecortin-like kinase 1 (Dclk1), transcript variant 1, mRNA
+
+product length = 85
+Forward primer  1     CGGCAGCTGGAGTTTCTGTA  20
+Template        1258  ....................  1277
+
+Reverse primer  1     CTCACATCCTGGTTGCGTCT  20
+Template        1342  ....................  1323
+
+>XM_039103247.2 PREDICTED: Rattus norvegicus doublecortin-like kinase 1 (Dclk1), transcript variant X1, mRNA
+
+product length = 85
+Forward primer  1     CGGCAGCTGGAGTTTCTGTA  20
+Template        2534  ....................  2553
+
+Reverse primer  1     CTCACATCCTGGTTGCGTCT  20
+Template        2618  ....................  2599
+
+>XM_039103255.2 PREDICTED: Rattus norvegicus doublecortin-like kinase 1 (Dclk1), transcript variant X10, mRNA
+
+product length = 85
+Forward primer  1     CGGCAGCTGGAGTTTCTGTA  20
+Template        1448  ....................  1467
+
+Reverse primer  1     CTCACATCCTGGTTGCGTCT  20
+Template        1532  ....................  1513
+
+>XM_039103250.2 PREDICTED: Rattus norvegicus doublecortin-like kinase 1 (Dclk1), transcript variant X3, mRNA
+
+product length = 85
+Forward primer  1     CGGCAGCTGGAGTTTCTGTA  20
+Template        2486  ....................  2505
+
+Reverse primer  1     CTCACATCCTGGTTGCGTCT  20
+Template        2570  ....................  2551
 
 ```
 
-We can confirm this design using ucsc in silico pcr and the GENCODE gene set 
+We cannot confirm this primer design using ucsc in silico pcr because there is no gencode annotation for rn7 
 
-```
->ENSMUST00000070418.8__Dclk1:1417+1576 160bp ACTGCAGCAGGAGTTTCTGT CTCACATCCTGGTTGCGTCT
-ACTGCAGCAGGAGTTTCTGTaatagcactggaccacgggtttaccatcaa
-gagatcagggtctttggactactaccaacaaccaggaatgtattggataa
-gaccaccgctcttgataaggagaggcaggttttccgacgaAGACGCAACC
-AGGATGTGAG
 
->ENSMUST00000198412.4__Dclk1:1273+1358 86bp ACTGCAGCAGGAGTTTCTGT CTCACATCCTGGTTGCGTCT
-ACTGCAGCAGGAGTTTCTGTaatagcaaccaccgctcttgataaggagag
-gcaggttttccgacgaAGACGCAACCAGGATGTGAG
-
->ENSMUST00000199702.4__Dclk1:1256+1415 160bp ACTGCAGCAGGAGTTTCTGT CTCACATCCTGGTTGCGTCT
-ACTGCAGCAGGAGTTTCTGTaatagcactggaccacgggtttaccatcaa
-gagatcagggtctttggactactaccaacaaccaggaatgtattggataa
-gaccaccgctcttgataaggagaggcaggttttccgacgaAGACGCAACC
-AGGATGTGAG
-
->ENSMUST00000054237.13__Dclk1:2326+2411 86bp ACTGCAGCAGGAGTTTCTGT CTCACATCCTGGTTGCGTCT
-ACTGCAGCAGGAGTTTCTGTaatagcaaccaccgctcttgataaggagag
-gcaggttttccgacgaAGACGCAACCAGGATGTGAG
-
->ENSMUST00000196745.4__Dclk1:2437+2522 86bp ACTGCAGCAGGAGTTTCTGT CTCACATCCTGGTTGCGTCT
-ACTGCAGCAGGAGTTTCTGTaatagcaaccaccgctcttgataaggagag
-gcaggttttccgacgaAGACGCAACCAGGATGTGAG
-
->ENSMUST00000198437.4__Dclk1:1307+1392 86bp ACTGCAGCAGGAGTTTCTGT CTCACATCCTGGTTGCGTCT
-ACTGCAGCAGGAGTTTCTGTaatagcaaccaccgctcttgataaggagag
-gcaggttttccgacgaAGACGCAACCAGGATGTGAG
-
-```
