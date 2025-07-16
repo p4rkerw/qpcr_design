@@ -910,7 +910,40 @@ tgtcccttgtcatatattacgttcctgcctgggccactgacttggataaa
 tacaaataaaccaaataccattca
 ```
 
+3. We will now create qPCR primers using PrimerBlast that are specific for short c-terminus containing isoforms (both DCLK1-L and DCLK1-S) using the following mRNA sequence where the
+** sequence is the portion that is unique to the short c-terminus isoforms. It should identify transcript variants 1 and 2 as highly similar to the PCR template.
 
+```
+ATAGCA**CTGGACCACGGGTTTACCATCAAGAGATCAGGGTCTTTGGACTACTACCAGCAACCAGGAATGTATTGGATAAGACCACCGCTCTTGATAAG**GAGAGGCAGGTTTTCCGACGAA
+
+```
+
+```
+Primer pair 1
+Sequence (5'->3')	Template strand	Length	Start	Stop	Tm	GC%	Self complementarity	Self 3' complementarity
+Forward primer	TGGACCACGGGTTTACCATC	Plus	20	8	27	59.67	55.00	5.00	0.00
+Reverse primer	TTCGTCGGAAAACCTGCCTC	Minus	20	120	101	60.60	55.00	3.00	0.00
+Product length	113
+Products on intended targets
+>NM_001195415.2 Homo sapiens doublecortin like kinase 1 (DCLK1), transcript variant 2, mRNA
+
+product length = 113
+Forward primer  1     TGGACCACGGGTTTACCATC  20
+Template        1278  ....................  1297
+
+Reverse primer  1     TTCGTCGGAAAACCTGCCTC  20
+Template        1390  ....................  1371
+
+>NM_004734.5 Homo sapiens doublecortin like kinase 1 (DCLK1), transcript variant 1, mRNA
+
+product length = 113
+Forward primer  1     TGGACCACGGGTTTACCATC  20
+Template        2348  ....................  2367
+
+Reverse primer  1     TTCGTCGGAAAACCTGCCTC  20
+Template        2460  ....................  2441
+
+```
 
 
 
