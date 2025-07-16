@@ -911,10 +911,10 @@ tacaaataaaccaaataccattca
 ```
 
 3. We will now create qPCR primers using PrimerBlast that are specific for short c-terminus containing isoforms (both DCLK1-L and DCLK1-S) using the following mRNA sequence where the
-** sequence is the portion that is unique to the short c-terminus isoforms. It should identify transcript variants 1 and 2 as highly similar to the PCR template.
+** sequence is the portion that is unique to the short c-terminus isoforms. It should identify transcript variants 1 and 2 as highly similar to the PCR template. Note that the lower case "g" is not conserved in mice. 
 
 ```
-ATAGCA**CTGGACCACGGGTTTACCATCAAGAGATCAGGGTCTTTGGACTACTACCAGCAACCAGGAATGTATTGGATAAGACCACCGCTCTTGATAAG**GAGAGGCAGGTTTTCCGACGAA
+ATAGCA**CTGGACCACGGGTTTACCATCAAGAGATCAGGGTCTTTGGACTACTACCAgCAACCAGGAATGTATTGGATAAGACCACCGCTCTTGATAAG**GAGAGGCAGGTTTTCCGACGAA
 
 ```
 
