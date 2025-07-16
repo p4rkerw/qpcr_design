@@ -945,5 +945,79 @@ Template        2460  ....................  2441
 
 ```
 
+We can confirm this primer design using ucsc in silico pcr and the gencode gene set for transcript variants 1 (DCLK1-L: NM_004734.5 / ENST00000255448.8) and 2 (DCLK1-S: NM_001195415.2 / ENST00000615680.5)
+
+```
+>ENST00000615680.5__DCLK1:1278+1390 113bp TGGACCACGGGTTTACCATC TTCGTCGGAAAACCTGCCTC
+TGGACCACGGGTTTACCATCaagagatcagggtctttggactactaccag
+caaccaggaatgtattggataagaccaccgctcttgataaggaGAGGCAG
+GTTTTCCGACGAA
+
+>ENST00000255448.8__DCLK1:2272+2384 113bp TGGACCACGGGTTTACCATC TTCGTCGGAAAACCTGCCTC
+TGGACCACGGGTTTACCATCaagagatcagggtctttggactactaccag
+caaccaggaatgtattggataagaccaccgctcttgataaggaGAGGCAG
+GTTTTCCGACGAA
+
+```
 
 
+4. We will also create qPCR primers using PrimeBlast that are specific for the long c-terminus containing isoforms (both DCLK1-L and DCLK1-S) using the following mRNA sequence where the
+|| indicates the splice junction. It should identify transcript variants 3, 5, and 6 as highly similar to the PCR template. Note how the first primer pair F primer crosses the splice
+junction.
+
+```
+ATAAAGAAGCATTTCAACACAGGCCCCAAGCCGAATAGCACAGCAGCTGGAGTTTCTGTCATAGCA||ACCACCGCTCTTGATAAGGAGAGGCAGGTTTTCCGACGAA
+
+ATAAAGAAGCATTTCAACACAGGCCCCAAGCCGAATAGCACAGCAGCTGGAGTTTCTGTCATAGCA||ACCACCGCTCTTGATAAGGAGAGGCAGGTTTTCCGACGAAGACGCAACCAGGATGTGAGGAGCCGGTACAAGGCGCAGCCAGCTCCTCCCGAACTCAACT
+
+```
+
+```
+Primer pair 1
+Sequence (5'->3')	Template strand	Length	Start	Stop	Tm	GC%	Self complementarity	Self 3' complementarity
+Forward primer	GTCATAGCAACCACCGCTCT	Plus	20	58	77	60.11	55.00	3.00	0.00
+Reverse primer	AGTTGAGTTCGGGAGGAGCTG	Minus	21	166	146	61.77	57.14	4.00	2.00
+Product length	109
+Products on intended targets
+>NM_001330071.2 Homo sapiens doublecortin like kinase 1 (DCLK1), transcript variant 5, mRNA
+
+product length = 109
+Forward primer  1     GTCATAGCAACCACCGCTCT  20
+Template        2338  ....................  2357
+
+Reverse primer  1     AGTTGAGTTCGGGAGGAGCTG  21
+Template        2446  .....................  2426
+
+>NM_001330072.2 Homo sapiens doublecortin like kinase 1 (DCLK1), transcript variant 6, mRNA
+
+product length = 109
+Forward primer  1     GTCATAGCAACCACCGCTCT  20
+Template        2239  ....................  2258
+
+Reverse primer  1     AGTTGAGTTCGGGAGGAGCTG  21
+Template        2347  .....................  2327
+
+>NM_001195416.2 Homo sapiens doublecortin like kinase 1 (DCLK1), transcript variant 3, mRNA
+
+product length = 109
+Forward primer  1     GTCATAGCAACCACCGCTCT  20
+Template        1268  ....................  1287
+
+Reverse primer  1     AGTTGAGTTCGGGAGGAGCTG  21
+Template        1376  .....................  1356
+```
+
+We can confirm this design using ucsc in silico pcr and the GENCODE gene set for transcript variants 3 (DCLK1-S: NM_001195416.2 / ENST00000379893.5) and 5 (DCLK1-L: NM_001330071.2) 
+
+```
+>ENST00000360631.8__DCLK1:2338+2446 109bp GTCATAGCAACCACCGCTCT AGTTGAGTTCGGGAGGAGCTG
+GTCATAGCAACCACCGCTCTtgataaggagaggcaggttttccgacgaag
+acgcaaccaggatgtgaggagccggtacaaggcgcagcCAGCTCCTCCCG
+AACTCAACT
+
+>ENST00000379893.5__DCLK1:1243+1351 109bp GTCATAGCAACCACCGCTCT AGTTGAGTTCGGGAGGAGCTG
+GTCATAGCAACCACCGCTCTtgataaggagaggcaggttttccgacgaag
+acgcaaccaggatgtgaggagccggtacaaggcgcagcCAGCTCCTCCCG
+AACTCAACT
+
+```
