@@ -2,7 +2,7 @@
 # strategy for designing primers that target the short C-terminus DCLK1 isoforms (both DCLK1-S and DCLK1-L) that lack the C-terminus extracellular domain 
 
 1. The short c-terminus isoforms all have a spliced out-of-frame exon with the aa sequence LDHGFTIKRSGSLDYYQQPGMYWIR located at chr3:55,521,845-55,521,933
-These isoforms include DCLK1 transcript variants 9 (DCLK1-L: NM_001357466.1), 11 (DCLK1-L: NM_001357469.1), 13 (DCLK1-S: NM_001357476.1), 3 (DCLK1-S: NM_001111052.2), and 10 (DCLK1-S: NM_001357468.1) The retained exon is exon 17 in DCLK1-L and exon 13 in DCLK1-S. These are the predicted protein and mRNA sequences for each of the primary transcripts. The bolded mRNA sequence is the
+These isoforms include DCLK1 transcript variants 9 (DCLK1-L: NM_001357466.1), 11 (DCLK1-L: NM_001357469.1), 13 (DCLK1-S: NM_001357476.1 / ENSMUST00000199702.5), 3 (DCLK1-S: NM_001111052.2), and 10 (DCLK1-S: NM_001357468.1 / ENSMUST00000070418.9) The retained exon is exon 17 in DCLK1-L and exon 13 in DCLK1-S. These are the predicted protein and mRNA sequences for each of the primary transcripts. The bolded mRNA sequence is the
 portion that is spliced out in the long c-terminus isoforms.
 
 DCLK1-L NM_001357466.1
