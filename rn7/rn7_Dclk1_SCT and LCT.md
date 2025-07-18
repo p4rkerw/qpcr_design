@@ -775,17 +775,31 @@ GCAGGTTTTCCGACG
 ```
 
 
-4. We will also create qPCR primers using PrimerBlast that are specific for the long c-terminus containing isoforms (both DCLK1-L and DCLK1-S) using the following mRNA sequence where the || indicates the splice junction. This is identical to the mm39 sequence. Note how the primer pair crosses the splice junction.
+4. We will also create qPCR primers using PrimerBlast that are specific for the long c-terminus containing isoforms (both DCLK1-L and DCLK1-S) using the following mRNA sequence where the || indicates the splice junction. This is identical to the mm39 sequence. Note how the primer pair crosses the splice junction and is identical to the mouse primer. 
 
 ```
 TTCAACACGGGCCCCAAGCCGAGCAGCACGGCAGCTGGAGTTTCTGTAATAGCA||ACCACCGCTCTTGATAAGGAGAGGCAGGTTTTCCGACGAAGACGCAACCAGGATGTGAGGGGCCGGTACAAGGCACAGCCAGCTCCACCAGAACTCAACT
 ```
 
 ```
+Primer pair 2
+Sequence (5'->3')	Template strand	Length	Start	Stop	Tm	GC%	Self complementarity	Self 3' complementarity
+Forward primer	AGCAACCACCGCTCTTGATA	Plus	20	51	70	59.39	50.00	3.00	2.00
+Reverse primer	AGTTGAGTTCTGGTGGAGCTG	Minus	21	154	134	59.93	52.38	4.00	2.00
+Product length	104
+Products on intended targets
+>NM_053343.3 Rattus norvegicus doublecortin-like kinase 1 (Dclk1), transcript variant 1, mRNA
+
+product length = 104
+Forward primer  1     AGCAACCACCGCTCTTGATA  20
+Template        1280  ....................  1299
+
+Reverse primer  1     AGTTGAGTTCTGGTGGAGCTG  21
+Template        1383  .....................  1363
 
 
 ```
 
-We cannot confirm this primer design using ucsc in silico pcr because there is no gencode annotation for rn7 
+We cannot confirm this primer design using ucsc in silico pcr because there is no gencode annotation for rn7 (but it is identical to the mouse sequence).
 
 
