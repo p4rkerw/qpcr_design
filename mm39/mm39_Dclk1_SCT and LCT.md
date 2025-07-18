@@ -757,65 +757,82 @@ TTCAACACAGGCCCCAAGCCGAGCAGCACTGCAGCAGGAGTTTCTGTAATAGCA||ACCACCGCTCTTGATAAGGAGAGG
 ```
 
 ```
-Primer pair 3
+Primer pair 5
 Sequence (5'->3')	Template strand	Length	Start	Stop	Tm	GC%	Self complementarity	Self 3' complementarity
-Forward primer	AGCACTGCAGCAGGAGTTTC	Plus	20	25	44	60.89	55.00	7.00	2.00
-Reverse primer	CTTGTACCGGCTCCTCACAT	Minus	20	126	107	59.46	55.00	4.00	2.00
-Product length	102
+Forward primer	AGCAACCACCGCTCTTGATA	Plus	20	51	70	59.39	50.00	3.00	2.00
+Reverse primer	TCAATTCCGGTGGAGCTGG	Minus	19	151	133	59.70	57.89	4.00	1.00
+Product length	101
 Products on intended targets
 >NM_001357475.1 Mus musculus doublecortin-like kinase 1 (Dclk1), transcript variant 12, mRNA
 
-product length = 102
-Forward primer  1     AGCACTGCAGCAGGAGTTTC  20
-Template        2434  ....................  2453
+product length = 101
+Forward primer  1     AGCAACCACCGCTCTTGATA  20
+Template        2460  ....................  2479
 
-Reverse primer  1     CTTGTACCGGCTCCTCACAT  20
-Template        2535  ....................  2516
+Reverse primer  1     TCAATTCCGGTGGAGCTGG  19
+Template        2560  ...................  2542
 
 >NM_001195538.2 Mus musculus doublecortin-like kinase 1 (Dclk1), transcript variant 5, mRNA
 
-product length = 102
-Forward primer  1     AGCACTGCAGCAGGAGTTTC  20
-Template        2437  ....................  2456
+product length = 101
+Forward primer  1     AGCAACCACCGCTCTTGATA  20
+Template        2463  ....................  2482
 
-Reverse primer  1     CTTGTACCGGCTCCTCACAT  20
-Template        2538  ....................  2519
+Reverse primer  1     TCAATTCCGGTGGAGCTGG  19
+Template        2563  ...................  2545
 
 >NM_001195539.2 Mus musculus doublecortin-like kinase 1 (Dclk1), transcript variant 6, mRNA
 
-product length = 102
-Forward primer  1     AGCACTGCAGCAGGAGTTTC  20
-Template        1492  ....................  1511
+product length = 101
+Forward primer  1     AGCAACCACCGCTCTTGATA  20
+Template        1518  ....................  1537
 
-Reverse primer  1     CTTGTACCGGCTCCTCACAT  20
-Template        1593  ....................  1574
+Reverse primer  1     TCAATTCCGGTGGAGCTGG  19
+Template        1618  ...................  1600
 
 >NM_001111051.2 Mus musculus doublecortin-like kinase 1 (Dclk1), transcript variant 2, mRNA
 
-product length = 102
-Forward primer  1     AGCACTGCAGCAGGAGTTTC  20
-Template        1444  ....................  1463
+product length = 101
+Forward primer  1     AGCAACCACCGCTCTTGATA  20
+Template        1470  ....................  1489
 
-Reverse primer  1     CTTGTACCGGCTCCTCACAT  20
-Template        1545  ....................  1526
+Reverse primer  1     TCAATTCCGGTGGAGCTGG  19
+Template        1570  ...................  1552
 
 >NM_019978.4 Mus musculus doublecortin-like kinase 1 (Dclk1), transcript variant 1, mRNA
 
-product length = 102
-Forward primer  1     AGCACTGCAGCAGGAGTTTC  20
-Template        2485  ....................  2504
+product length = 101
+Forward primer  1     AGCAACCACCGCTCTTGATA  20
+Template        2511  ....................  2530
 
-Reverse primer  1     CTTGTACCGGCTCCTCACAT  20
-Template        2586  ....................  2567
-
-
-```
-
-
-We can confirm this design using ucsc in silico pcr and the GENCODE gene set 
+Reverse primer  1     TCAATTCCGGTGGAGCTGG  19
+Template        2611  ...................  2593
 
 ```
 
+
+We can confirm this design using ucsc in silico pcr and the GENCODE gene se. Set the minimum perfect match to 18bp (to exclude partial matches in other isoforms).
+
+```
+>ENSMUST00000196745.5__Dclk1:2460+2560 101bp AGCAACCACCGCTCTTGATA TCAATTCCGGTGGAGCTGG
+AGCAACCACCGCTCTTGATAaggagaggcaggttttccgacgaagacgca
+accaggatgtgaggagccggtacaaggcgcagCCAGCTCCACCGGAATTG
+A
+
+>ENSMUST00000198437.5__Dclk1:1330+1430 101bp AGCAACCACCGCTCTTGATA TCAATTCCGGTGGAGCTGG
+AGCAACCACCGCTCTTGATAaggagaggcaggttttccgacgaagacgca
+accaggatgtgaggagccggtacaaggcgcagCCAGCTCCACCGGAATTG
+A
+
+>ENSMUST00000198412.5__Dclk1:1296+1396 101bp AGCAACCACCGCTCTTGATA TCAATTCCGGTGGAGCTGG
+AGCAACCACCGCTCTTGATAaggagaggcaggttttccgacgaagacgca
+accaggatgtgaggagccggtacaaggcgcagCCAGCTCCACCGGAATTG
+A
+
+>ENSMUST00000054237.14__Dclk1:2349+2449 101bp AGCAACCACCGCTCTTGATA TCAATTCCGGTGGAGCTGG
+AGCAACCACCGCTCTTGATAaggagaggcaggttttccgacgaagacgca
+accaggatgtgaggagccggtacaaggcgcagCCAGCTCCACCGGAATTG
+A
 
 ```
 
