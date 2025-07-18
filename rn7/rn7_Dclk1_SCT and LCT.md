@@ -775,7 +775,7 @@ GCAGGTTTTCCGACG
 ```
 
 
-4. We will also create qPCR primers using PrimerBlast that are specific for the long c-terminus containing isoforms (both DCLK1-L and DCLK1-S) using the following mRNA sequence where the || indicates the splice junction. Note how the primer pair crosses the splice junction.
+4. We will also create qPCR primers using PrimerBlast that are specific for the long c-terminus containing isoforms (both DCLK1-L and DCLK1-S) using the following mRNA sequence where the || indicates the splice junction. This is identical to the mm39 sequence. Note how the primer pair crosses the splice junction.
 
 ```
 TTCAACACGGGCCCCAAGCCGAGCAGCACGGCAGCTGGAGTTTCTGTAATAGCA||ACCACCGCTCTTGATAAGGAGAGGCAGGTTTTCCGACGAAGACGCAACCAGGATGTGAGGGGCCGGTACAAGGCACAGCCAGCTCCACCAGAACTCAACT
